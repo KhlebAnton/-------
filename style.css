@@ -141,11 +141,13 @@ body {
     width: 100%;
     overflow: hidden;
 }
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 1em 1em 0 1em;
+    justify-content: space-between;
+}
 #skip {
-position: fixed;
-top: 15px;
-right: 30px;
-
 
 color: #164C93;
 
