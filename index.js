@@ -27,7 +27,9 @@ function handleTouchMove(event) {
 }
 
 function handleTouchEnd() {
+    playMusic();
     if (!deltaX || Math.abs(deltaX) < deltaXThreshold) return;
+    
 
     const swipeDirection = deltaX > 0 ? 'prev' : 'next';
 
@@ -41,7 +43,7 @@ function handleTouchEnd() {
         
         }
     } else if (swipeDirection === 'next') {
-        playMusic();
+        
         nextCard();
     }
 
@@ -50,7 +52,7 @@ function handleTouchEnd() {
 }
 
 function nextCard() {
-    playMusic();
+    
     if (activeCardIndex == cards.length - 2) {
         document.querySelector('.btn_next').classList.add('hidden');
         document.querySelector('.btn_go').classList.remove('hidden');
@@ -87,5 +89,3 @@ function playMusic() {
     const music = document.getElementById('music');
     music.play();
 }
-
-window.addEventListener("click", playMusic());
